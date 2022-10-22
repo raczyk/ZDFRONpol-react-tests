@@ -24,7 +24,7 @@ const EmployeesList = () => {
     return <EmployeesListItem key={index} employee={employee} itemNumber={numberInTheList}/>
   });
 
-  const loaderText = isLoading ? <span className="loader">...isLoading</span> : null;
+  const loaderText = isLoading ? <div className="loader"></div> : null;
 
   return (
     <div>
