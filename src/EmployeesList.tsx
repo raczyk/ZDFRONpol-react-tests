@@ -7,8 +7,7 @@ import { EmployeeRawData } from './employeesDataMock';
 const EmployeesList = () => {
     // const employeesData: EmployeeRawData[] = [];
     const [employeesData, setEmployeesData] = useState<EmployeeRawData[]>([]);
-    const isLoading = employeesData.length === 0;
-
+    const dataIsLoading = employeesData.length === 0;
 
     useEffect(() => {
         const fetchEmployeeData = async () => {
@@ -24,13 +23,13 @@ const EmployeesList = () => {
     return <EmployeesListItem key={index} employee={employee} itemNumber={numberInTheList}/>
   });
 
-  const loaderText = isLoading ? <div className="loader"></div> : null;
+  const loader = dataIsLoading ? <div className="loader"></div> : null;
 
   return (
     <div>
         <OrangeLink to="/">Go back to Home</OrangeLink>
         <h1>Emloyee List</h1>
-        <pre>{loaderText}</pre>
+        <pre>{loader}</pre>
         <ul>
             {employeesListItems}
         </ul>

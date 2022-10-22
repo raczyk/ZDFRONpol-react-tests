@@ -1,4 +1,5 @@
 import React from "react";
+import OrangeLink from "./OrangeLink";
 
 const employeeItemStyle = {
   border: '2px solid yellow',
@@ -18,6 +19,7 @@ const positionStyle = {
 };
 
 interface Employee {
+    id: number;
     firstName: string;
     lastName: string;
     dateOfBirth: string;
@@ -32,10 +34,14 @@ interface EmployeeListItemProps {
 
 const EmployeesListItem = ({ employee, itemNumber }: EmployeeListItemProps) => {
 
+  const pathToEmployeePage = `/employee/:${employee.id}`
+
     return (
       <li style={employeeItemStyle}>
         <div>({itemNumber})</div>
-        <div>{employee.firstName} {employee.lastName}</div>
+        <OrangeLink to={pathToEmployeePage}>
+          <div>{employee.firstName} {employee.lastName}</div>
+        </OrangeLink>
         <div>{employee.dateOfBirth}</div>
         <div style={salaryStyle}>{employee.salary}</div>
         <div style={positionStyle}>{employee.position}</div>
