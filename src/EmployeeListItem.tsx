@@ -1,4 +1,5 @@
 import React from "react";
+
 const employeeItemStyle = {
   border: '2px solid yellow',
   margin: '5px',
@@ -26,21 +27,20 @@ interface Employee {
 
 interface EmployeeListItemProps {
     employee: Employee;
-    number: number;
+    itemNumber: number;
 }
 
-const EmployeesListItem = (props: EmployeeListItemProps) => {
+const EmployeesListItem = ({ employee, itemNumber }: EmployeeListItemProps) => {
 
     return (
       <li style={employeeItemStyle}>
-        <div>({props.number})</div>
-        <div>{props.employee.firstName} {props.employee.lastName}</div>
-        <div>{props.employee.dateOfBirth}</div>
-        <div style={salaryStyle}>{props.employee.salary}</div>
-        <div style={positionStyle}>{props.employee.position}</div>
+        <div>({itemNumber})</div>
+        <div>{employee.firstName} {employee.lastName}</div>
+        <div>{employee.dateOfBirth}</div>
+        <div style={salaryStyle}>{employee.salary}</div>
+        <div style={positionStyle}>{employee.position}</div>
       </li>
     )
 }
-
 
 export default EmployeesListItem;

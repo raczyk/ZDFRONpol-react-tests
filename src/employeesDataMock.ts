@@ -1,4 +1,13 @@
-const employees = [
+export interface EmployeeRawData {
+  id: number;
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  position: string;
+  salary: number;
+}
+
+const employeesData: EmployeeRawData[] = [
     {
       id: 1,
       firstName: 'John',
@@ -24,4 +33,5 @@ const employees = [
       salary: 10000,
     }
   ];
-  export default employees
+
+  export default employeesData

@@ -1,47 +1,40 @@
-import React from 'react';
-import employeesData from './employeesDataMock';
+import React, { useEffect, useState } from 'react';
 import EmployeesListItem from './EmployeeListItem';
+import OrangeLink from './OrangeLink';
+import fakeFetch from './fakeFetch';
+import { EmployeeRawData } from './employeesDataMock';
 
 const EmployeesList = () => {
-  const employeesListItems = employeesData.map((employee, index) => {
+    // const employeesData: EmployeeRawData[] = [];
+    const [employeesData, setEmployeesData] = useState<EmployeeRawData[]>([]);
+    const isLoading = employeesData.length === 0;
+
+
+    useEffect(() => {
+        const fetchEmployeeData = async () => {
+            const promisedValueFromFetch = await fakeFetch();
+            setEmployeesData(promisedValueFromFetch)
+        }
+        fetchEmployeeData();
+    }, [])
+
+    const employeesListItems = employeesData.map((employee, index) => {
     const numberInTheList = index + 1;
 
-    return (
-        <div>
-            <EmployeesListItem employee={employee} number={numberInTheList}/>
-        </div>
-    )
-
-    // return (
-    //   <li style={employeeItemStyle}>
-    //     {el.firstName} {el.lastName} <br />
-    //     {el.dateOfBirth} <br />
-    //     <span style={salaryStyle}>{el.salary}</span> <br />
-    //     <span style={positionStyle}>{el.position}</span>
-    //   </li>
-    // );
+    return <EmployeesListItem key={index} employee={employee} itemNumber={numberInTheList}/>
   });
+
+  const loaderText = isLoading ? <span className="loader">...isLoading</span> : null;
+
   return (
     <div>
-      Hello employees
-      <ul>
-        {employeesListItems}
-      </ul>
+        <OrangeLink to="/">Go back to Home</OrangeLink>
+        <h1>Emloyee List</h1>
+        <pre>{loaderText}</pre>
+        <ul>
+            {employeesListItems}
+        </ul>
     </div>
   );
 };
 export default EmployeesList;
-// return (
-  //   <li key={`element-${el.id}`}>
-  //     <a href={`/employees-list/employees-item/${el.id}`}>
-  //       {el.id}. {el.firstName} {el.lastName}
-  //     </a>
-  //   </li>
-  // );
-// function allEmployees() {
-//   let employessList:[] = []
-//   for (let i = 0; i < employees.length; i++) {
-//     const singlEmployee = getEmployee({id: i})
-//     employessList.push(singlEmployee)
-//   }
-//
