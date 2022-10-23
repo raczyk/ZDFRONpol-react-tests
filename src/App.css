@@ -33,3 +33,13 @@ color: rgb(72, 0, 255);
     transform: rotate(360deg);
   }
 }
+
+.timer {
+  border: 6px skyblue solid;
+  padding: 20px;
+  margin: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  cursor: pointer;
+}
