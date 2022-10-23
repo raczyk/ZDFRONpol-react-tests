@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import HomePage from './pages/HomePage';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import EmployeesList from './EmployeesList';
-import EmployeePage from './EmployeePage';
+import EmployeesListPage from './pages/EmployeesListPage';
+import EmployeePage from './pages/EmployeePage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <HomePage />,
   },
   {
     path: "/employees-list",
-    element: <EmployeesList />,
+    element: <EmployeesListPage />,
   },
   {
     path: "/employee/:id",
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement ).render(
-
+  <div id="page">
     <RouterProvider router={router} />
-
+    </div>
 );

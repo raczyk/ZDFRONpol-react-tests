@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
-import OrangeLink from './OrangeLink';
+import OrangeLink from '../components/OrangeLink';
 
 
-function App() {
+function HomePage() {
   return (
     <div className="App">
         <p>
@@ -13,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;

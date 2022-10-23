@@ -34,7 +34,7 @@ interface EmployeeListItemProps {
 
 const EmployeesListItem = ({ employee, itemNumber }: EmployeeListItemProps) => {
 
-  const pathToEmployeePage = `/employee/:${employee.id}`
+  const pathToEmployeePage = `/employee/${employee.id}`
 
     return (
       <li style={employeeItemStyle}>

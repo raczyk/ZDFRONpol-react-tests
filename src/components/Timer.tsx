@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react';
 
-const Timer = () => {
+interface TimerProps {
+    onReset?: (valueBeforeReset: number)=> void;
+}
+
+const Timer = (props: TimerProps) => {
+
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      console.log('timerInterval');
       setCount((count) => {
         return count + 1;
       });
     }, 1000);
 
-    return () => clearInterval(intervalId);
+    const effectCleanup = () => clearInterval(intervalId)
+    return effectCleanup;
   }, []);
 
   const resetTimer = () => {
+    props.onReset?.(count);
     setCount(0);
   };
 

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import EmployeesListItem from './EmployeeListItem';
-import OrangeLink from './OrangeLink';
-import fakeFetch from './fakeFetch';
-import { EmployeeRawData } from './employeesDataMock';
-import Clock from './Clock';
-import Timer from './Timer';
+import EmployeesListItem from '../components/EmployeeListItem';
+import OrangeLink from '../components/OrangeLink';
+import fakeFetch from '../fakeFetch';
+import { EmployeeRawData } from '../employeesDataMock';
+import Clock from '../components/Clock';
 
-const EmployeesList = () => {
-    // const employeesData: EmployeeRawData[] = [];
+const EmployeesListPage = () => {
     const [employeesData, setEmployeesData] = useState<EmployeeRawData[]>([]);
     const dataIsLoading = employeesData.length === 0;
 
@@ -29,7 +27,6 @@ const EmployeesList = () => {
 
   return (
     <div>
-        <Timer />
         <Clock />
         <OrangeLink to="/">Go back to Home</OrangeLink>
         <h1>Emloyee List</h1>
@@ -40,4 +37,4 @@ const EmployeesList = () => {
     </div>
   );
 };
-export default EmployeesList;
+export default EmployeesListPage;
