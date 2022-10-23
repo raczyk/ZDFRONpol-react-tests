@@ -6,25 +6,25 @@ import HomePage from './pages/HomePage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import EmployeesListPage from './pages/EmployeesListPage';
 import EmployeePage from './pages/EmployeePage';
-
+import Page from './pages/Page';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <HomePage />,
   },
   {
-    path: "/employees-list",
+    path: '/employees-list',
     element: <EmployeesListPage />,
   },
   {
-    path: "/employee/:id",
-    element: <EmployeePage  />,
+    path: '/employee/:id',
+    element: <EmployeePage />,
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement ).render(
-  <div id="page">
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <Page>
     <RouterProvider router={router} />
-    </div>
+  </Page>
 );

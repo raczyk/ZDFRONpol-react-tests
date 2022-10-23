@@ -1,5 +1,5 @@
 body {
-  background-color: #282C34;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,12 +9,11 @@ body {
   color: white;
 }
 .colorRed {
-color: red;
+  color: red;
 }
 .colorBlue {
-color: rgb(72, 0, 255);
+  color: rgb(72, 0, 255);
 }
-
 
 .loader {
   border: 10px solid #f3f3f3;
@@ -25,7 +24,7 @@ color: rgb(72, 0, 255);
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin{
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
@@ -42,4 +41,22 @@ color: rgb(72, 0, 255);
   height: 80px;
   border-radius: 50px;
   cursor: pointer;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  border-bottom: 2px solid skyblue;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 0;
+}
+
+.footer {
+
+}
+
+.headerSpacer { 
+   padding-bottom: 30px;
 }
