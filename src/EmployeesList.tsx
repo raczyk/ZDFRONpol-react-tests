@@ -3,6 +3,7 @@ import EmployeesListItem from './EmployeeListItem';
 import OrangeLink from './OrangeLink';
 import fakeFetch from './fakeFetch';
 import { EmployeeRawData } from './employeesDataMock';
+import Clock from './Clock';
 
 const EmployeesList = () => {
     // const employeesData: EmployeeRawData[] = [];
@@ -27,6 +28,7 @@ const EmployeesList = () => {
 
   return (
     <div>
+        <Clock />
         <OrangeLink to="/">Go back to Home</OrangeLink>
         <h1>Emloyee List</h1>
         <pre>{loader}</pre>
