@@ -1,14 +1,15 @@
-import React from 'react';
-import OrangeLink from '../components/OrangeLink';
-
+import React from "react";
+import ClickCounter from "../components/ClickCounter";
+import OrangeLink from "../components/OrangeLink";
 
 function HomePage() {
   return (
     <div className="App">
-        <p>
-            <OrangeLink to="employees-list">Employee-List</OrangeLink>
-        </p>
-</div>
+      <p>
+        <OrangeLink to="employees-list">Employee-List</OrangeLink>
+      </p>
+      <ClickCounter />
+    </div>
   );
 }
 

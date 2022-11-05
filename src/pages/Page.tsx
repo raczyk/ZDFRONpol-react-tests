@@ -13,7 +13,7 @@ const Page = (props: PageProps) => {
       </header>
       <div className="headerSpacer"></div>
       {props.children}
-      <footer className="footer">Goodbye</footer>
+      <footer className="footer"></footer>
     </div>
   );
 };

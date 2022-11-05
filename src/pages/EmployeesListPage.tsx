@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import EmployeesListItem from '../components/EmployeeListItem';
-import OrangeLink from '../components/OrangeLink';
-import fakeFetch from '../fakeFetch';
-import { EmployeeRawData } from '../employeesDataMock';
+import React, { useEffect, useState } from "react";
+import EmployeesListItem from "../components/EmployeeListItem";
+import OrangeLink from "../components/OrangeLink";
+import fakeFetch from "../fakeFetch";
+import { EmployeeRawData } from "../employeesDataMock";
 
 const EmployeesListPage = () => {
   const [employeesData, setEmployeesData] = useState<EmployeeRawData[]>([]);
