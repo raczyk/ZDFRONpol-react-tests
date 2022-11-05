@@ -23,6 +23,9 @@ const NavBar = () => {
         <li>
           <OrangeLink to="/contact">contact</OrangeLink>
         </li>
+        <li>
+          <OrangeLink to="/contact2">contact2</OrangeLink>
+        </li>
       </ul>
     </nav>
   );

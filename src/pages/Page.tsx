@@ -4,11 +4,7 @@ import NavBar from "../NavBar";
 import { Outlet } from "react-router-dom";
 import ClickCounter from "../components/ClickCounter";
 
-interface PageProps {
-  children: React.ReactNode;
-}
-
-const Page = (props: PageProps) => {
+const Page = () => {
   const sectionStyle = {
     marginLeft: "250px",
     border: "solid #FDC72F 3px",
@@ -22,7 +18,6 @@ const Page = (props: PageProps) => {
   return (
     <div id="page">
       <NavBar />
-
       <header style={headerStyle}>
         ZDFRONpol12 (<Clock />)
         <ClickCounter />

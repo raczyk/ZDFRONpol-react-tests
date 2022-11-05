@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 
+const newTime = () => {
+  return new Date().toLocaleTimeString();
+};
+
 const Clock = () => {
-  const [dateString, setDateString] = useState<string>();
+  const [timeString, setTimeString] = useState<string>(newTime());
 
   useEffect(() => {
     setInterval(() => {
-      const newDateString = new Date().toLocaleTimeString();
-      setDateString(newDateString);
+      setTimeString(newTime());
     }, 1000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <span>{dateString}</span>;
+  return <span>{timeString}</span>;
 };
 
 export default Clock;

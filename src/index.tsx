@@ -9,11 +9,12 @@ import EmployeePage from "./pages/EmployeePage";
 import Page from "./pages/Page";
 import ContactFormPage from "./pages/ContactFormPage";
 import LayoutDemo from "./pages/LayoutDemo";
+import ContactFormPage2 from "./pages/ContactFormPage2";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Page children={undefined} />,
+    element: <Page />,
     // errorElement: <ErrorPage />,
     // loader: rootLoader,
     // action: rootAction,
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <ContactFormPage />,
+        // loader: contactLoader,
+      },
+      {
+        path: "contact2",
+        element: <ContactFormPage2 />,
         // loader: contactLoader,
       },
       {
