@@ -8,10 +8,18 @@
 
 import React, { useState } from "react";
 const ClickCounter = () => {
+  const style = {
+    margin: "10px",
+  };
+
   const [count, setCount] = useState(0);
   const increaseCount = () => {
     setCount(count + 1);
   };
-  return <button onClick={increaseCount}>You clicked me {count} times</button>;
+  return (
+    <button onClick={increaseCount} style={style}>
+      Click me {count}
+    </button>
+  );
 };
 export default ClickCounter;

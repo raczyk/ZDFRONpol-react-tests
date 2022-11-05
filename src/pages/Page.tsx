@@ -1,19 +1,35 @@
 import React from "react";
 import Clock from "../components/Clock";
+import NavBar from "../NavBar";
+import { Outlet } from "react-router-dom";
+import ClickCounter from "../components/ClickCounter";
 
 interface PageProps {
   children: React.ReactNode;
 }
 
 const Page = (props: PageProps) => {
+  const sectionStyle = {
+    marginLeft: "250px",
+    border: "solid #FDC72F 3px",
+  };
+
+  const headerStyle = {
+    ...sectionStyle,
+    textAlign: "center" as "center",
+  };
+
   return (
     <div id="page">
-      <header className="header">
-        ZDFRONpol12 <Clock />
+      <NavBar />
+
+      <header style={headerStyle}>
+        ZDFRONpol12 (<Clock />)
+        <ClickCounter />
       </header>
-      <div className="headerSpacer"></div>
-      {props.children}
-      <footer className="footer"></footer>
+      <section style={sectionStyle}>
+        <Outlet />
+      </section>
     </div>
   );
 };

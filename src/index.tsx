@@ -8,28 +8,41 @@ import EmployeesListPage from "./pages/EmployeesListPage";
 import EmployeePage from "./pages/EmployeePage";
 import Page from "./pages/Page";
 import ContactFormPage from "./pages/ContactFormPage";
+import LayoutDemo from "./pages/LayoutDemo";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/employees-list",
-    element: <EmployeesListPage />,
-  },
-  {
-    path: "/employee/:id",
-    element: <EmployeePage />,
-  },
-  {
-    path: "/contact",
-    element: <ContactFormPage />,
+    element: <Page children={undefined} />,
+    // errorElement: <ErrorPage />,
+    // loader: rootLoader,
+    // action: rootAction,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "contact",
+        element: <ContactFormPage />,
+        // loader: contactLoader,
+      },
+      {
+        path: "/layout-demo",
+        element: <LayoutDemo />,
+      },
+      {
+        path: "/employees-list",
+        element: <EmployeesListPage />,
+      },
+      {
+        path: "/employee/:id",
+        element: <EmployeePage />,
+      },
+    ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <Page>
-    <RouterProvider router={router} />
-  </Page>
+  <RouterProvider router={router} />
 );
