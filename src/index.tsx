@@ -10,6 +10,7 @@ import Page from "./pages/Page";
 import ContactFormPage from "./pages/ContactFormPage";
 import LayoutDemo from "./pages/LayoutDemo";
 import ContactFormPage2 from "./pages/ContactFormPage2";
+import ItunesAlbumList from "./pages/ItunesAlbumList";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/employee/:id",
         element: <EmployeePage />,
+      },
+      {
+        path: "/itunes-albums",
+        element: <ItunesAlbumList />,
       },
     ],
   },

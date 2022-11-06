@@ -26,6 +26,9 @@ const NavBar = () => {
         <li>
           <OrangeLink to="/contact2">contact2</OrangeLink>
         </li>
+        <li>
+          <OrangeLink to="/itunes-albums">itunes albums</OrangeLink>
+        </li>
       </ul>
     </nav>
   );
