@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import PageTitle from "../components/PageTitle";
 
 const ContactFormPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -21,7 +22,7 @@ const ContactFormPage = () => {
 
   return (
     <>
-      Your name is: {fullName}
+      <PageTitle title="Form with two states" />
       <br />
       <form onSubmit={handleFormSubmit}>
         <input

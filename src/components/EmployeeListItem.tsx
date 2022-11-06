@@ -2,51 +2,50 @@ import React from "react";
 import OrangeLink from "./OrangeLink";
 
 const employeeItemStyle = {
-  border: '2px solid yellow',
-  margin: '5px',
-  textAlign: 'center' as const,
-  padding: '10px',
+  margin: "5px",
+  textAlign: "center" as const,
+  padding: "10px",
 };
 
 const salaryStyle = {
-  color: 'blue',
+  color: "blue",
 };
 
 const positionStyle = {
-  border: '3px dashed yellow',
-  padding: '5px',
-  margin: '5px'
+  padding: "5px",
+  margin: "5px",
 };
 
 interface Employee {
-    id: number;
-    firstName: string;
-    lastName: string;
-    dateOfBirth: string;
-    salary: number;
-    position: string;
+  id: number;
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  salary: number;
+  position: string;
 }
 
 interface EmployeeListItemProps {
-    employee: Employee;
-    itemNumber: number;
+  employee: Employee;
+  itemNumber: number;
 }
 
 const EmployeesListItem = ({ employee, itemNumber }: EmployeeListItemProps) => {
+  const pathToEmployeePage = `/employee/${employee.id}`;
 
-  const pathToEmployeePage = `/employee/${employee.id}`
-
-    return (
-      <li style={employeeItemStyle}>
-        <div>({itemNumber})</div>
-        <OrangeLink to={pathToEmployeePage}>
-          <div>{employee.firstName} {employee.lastName}</div>
-        </OrangeLink>
-        <div>{employee.dateOfBirth}</div>
-        <div style={salaryStyle}>{employee.salary}</div>
-        <div style={positionStyle}>{employee.position}</div>
-      </li>
-    )
-}
+  return (
+    <li style={employeeItemStyle}>
+      <div>({itemNumber})</div>
+      <OrangeLink to={pathToEmployeePage}>
+        <div>
+          {employee.firstName} {employee.lastName}
+        </div>
+      </OrangeLink>
+      <div>{employee.dateOfBirth}</div>
+      <div style={salaryStyle}>{employee.salary}</div>
+      <div style={positionStyle}>{employee.position}</div>
+    </li>
+  );
+};
 
 export default EmployeesListItem;

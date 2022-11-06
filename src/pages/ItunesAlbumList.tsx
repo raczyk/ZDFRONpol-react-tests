@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import ItunesAlbum from "../components/ItunesAlbum";
+import CircleLoader from "../components/CircleLoader";
+import ItunesAlbum, { AlbumDataEntry } from "../components/ItunesAlbum";
+import PageTitle from "../components/PageTitle";
 
-interface AlbumDataEntry {
-  ["im:name"]: {
-    label: string;
-  };
-}
+const addDelay = () => {
+  return new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(null);
+    }, 1000)
+  );
+};
 
 interface ItunesTopAlbumsResponseData {
   feed: {
@@ -24,6 +28,8 @@ const ItunesAlbumList = () => {
         "https://itunes.apple.com/us/rss/topalbums/limit=100/json"
       );
 
+      await addDelay();
+
       const fetchedData =
         (await fetchResult.json()) as ItunesTopAlbumsResponseData;
 
@@ -35,12 +41,15 @@ const ItunesAlbumList = () => {
   }, []);
 
   const albumComponents = albumDataEntries?.map((albumEntry, index) => {
-    return <ItunesAlbum key={index} albumDataEntry={albumEntry} />;
+    return (
+      <ItunesAlbum key={index} place={index + 1} albumDataEntry={albumEntry} />
+    );
   });
 
   return (
     <>
-      <div title="Hey I'm a div">Top Albums</div>
+      <PageTitle title="Top Albums" />
+      <CircleLoader show={albumDataEntries === null} />
       {albumComponents}
     </>
   );

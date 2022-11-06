@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import InputWarningMessage from "../components/form/InputWarningMessage";
+import PageTitle from "../components/PageTitle";
 
 const ContactFormPage2 = () => {
   const initialFormState = {
@@ -35,7 +36,7 @@ const ContactFormPage2 = () => {
 
   return (
     <>
-      <h4>Contact from with object state:</h4>
+      <PageTitle title="Contact from with object state" />
       <br />
       <form onSubmit={handleFormSubmit}>
         <input

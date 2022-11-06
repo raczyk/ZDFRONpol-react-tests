@@ -7,19 +7,26 @@ import ClickCounter from "../components/ClickCounter";
 const Page = () => {
   const sectionStyle = {
     marginLeft: "250px",
-    border: "solid #FDC72F 3px",
+    marginTop: "30px",
   };
 
   const headerStyle = {
-    ...sectionStyle,
+    padding: "5px",
+    position: "sticky" as "sticky",
+    top: "0",
+    background: "black",
     textAlign: "center" as "center",
+    display: "flex",
+    justifyContent: "space-between",
+    fontSize: "14px",
+    opacity: "0.7",
   };
 
   return (
     <div id="page">
       <NavBar />
       <header style={headerStyle}>
-        ZDFRONpol12 (<Clock />)
+        ZDFRONpol12 <Clock />
         <ClickCounter />
       </header>
       <section style={sectionStyle}>

@@ -1,4 +1,5 @@
 import React from "react";
+import PageTitle from "../components/PageTitle";
 
 const LayoutDemo = () => {
   const boxStyle = {
@@ -16,11 +17,14 @@ const LayoutDemo = () => {
   };
 
   return (
-    <div style={{ width: "100vw" }}>
-      <div style={boxStyle}>1</div>
-      <div style={boxStyle}>2</div>
-      <div style={thirdBoxStyle}>3</div>
-      <div style={boxStyle}>4</div>
+    <div>
+      <PageTitle title="Layout demo" />
+      <div style={{ width: "100vw" }}>
+        <div style={boxStyle}>1</div>
+        <div style={boxStyle}>2</div>
+        <div style={thirdBoxStyle}>3</div>
+        <div style={boxStyle}>4</div>
+      </div>
     </div>
   );
 };

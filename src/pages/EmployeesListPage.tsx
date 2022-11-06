@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import EmployeesListItem from "../components/EmployeeListItem";
-import OrangeLink from "../components/OrangeLink";
 import fakeFetch from "../fakeFetch";
 import { EmployeeRawData } from "../employeesDataMock";
+import CircleLoader from "../components/CircleLoader";
+import PageTitle from "../components/PageTitle";
 
 const EmployeesListPage = () => {
   const [employeesData, setEmployeesData] = useState<EmployeeRawData[]>([]);
@@ -28,14 +29,11 @@ const EmployeesListPage = () => {
     );
   });
 
-  const loader = dataIsLoading ? <div className="loader"></div> : null;
-
   return (
     <div>
-      <OrangeLink to="/">Go back to Home</OrangeLink>
-      <h1>Emloyee List</h1>
-      <pre>{loader}</pre>
-      <ul>{employeesListItems}</ul>
+      <PageTitle title="Emloyee List" />
+      <CircleLoader show={dataIsLoading} />
+      <ul style={{ listStyleType: "none" }}>{employeesListItems}</ul>
     </div>
   );
 };

@@ -3,14 +3,18 @@ import OrangeLink from "./components/OrangeLink";
 const NavBar = () => {
   const style = {
     position: "absolute" as "absolute",
+    top: "30px",
     left: "0px",
     width: "250px",
-    border: "solid #D64078 3px",
+  };
+
+  const listStyle = {
+    listStyleType: "none",
   };
 
   return (
     <nav style={style}>
-      <ul>
+      <ul style={listStyle}>
         <li>
           <OrangeLink to="/">home</OrangeLink>
         </li>

@@ -9,7 +9,8 @@
 import React, { useState } from "react";
 const ClickCounter = () => {
   const style = {
-    margin: "10px",
+    margin: "2px",
+    fontSize: "10px",
   };
 
   const [count, setCount] = useState(0);
