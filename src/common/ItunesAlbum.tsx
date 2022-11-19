@@ -8,13 +8,18 @@ const labelStyle = {
   margin: "10px",
 };
 
-const getCoverStyle = (imageUrl: string) => {
-  const imageUrlSized = imageUrl.replace("60x60bb", "100x100bb");
+const getCoverImageStyle = (imageUrl: string | undefined) => {
+  const imageUrlSized = imageUrl
+    ? imageUrl.replace("60x60bb", "100x100bb")
+    : undefined;
+
   return {
     width: "100px",
     height: "100px",
     background: "blue",
-    backgroundImage: `url("${imageUrlSized}")`,
+    backgroundImage:
+      imageUrl === undefined ? "none" : `url("${imageUrlSized}")`,
+    backgroundSize: "contain",
   };
 };
 
@@ -30,29 +35,36 @@ interface ObjectWithlabel {
   label: string;
 }
 
-export interface AlbumDataEntry {
-  ["im:name"]: ObjectWithlabel;
-  ["im:artist"]: ObjectWithlabel;
-  ["im:price"]: ObjectWithlabel;
-  ["im:image"]: ObjectWithlabel[];
+interface PriceObject {
+  label: string;
+  attributes: {
+    amount: string;
+  };
+}
+
+export interface ItunesAlbumDataEntry {
+  "im:name": ObjectWithlabel;
+  "im:artist": ObjectWithlabel;
+  "im:price"?: PriceObject;
+  "im:image"?: ObjectWithlabel[];
 }
 
 interface ItunesAlbumProps {
   place: number;
-  albumDataEntry: AlbumDataEntry;
+  albumDataEntry: ItunesAlbumDataEntry;
 }
 
 const ItunesAlbum = ({ albumDataEntry, place }: ItunesAlbumProps) => {
-  const mediumSizeCoverImage = albumDataEntry["im:image"][1].label;
+  const mediumSizeCoverImageUrl = albumDataEntry?.["im:image"]?.[1]?.label;
 
   return (
     <div style={albumStyle}>
       <div style={numberStyle}>{place}</div>
-      <div style={getCoverStyle(mediumSizeCoverImage)}></div>
+      <div style={getCoverImageStyle(mediumSizeCoverImageUrl)}></div>
       <div style={albumInfoStyles}>
         <div style={labelStyle}>{albumDataEntry["im:name"].label}</div>
         <div style={labelStyle}>{albumDataEntry["im:artist"].label}</div>
-        <div style={labelStyle}>{albumDataEntry["im:price"].label}</div>
+        <div style={labelStyle}>{albumDataEntry?.["im:price"]?.label}</div>
       </div>
     </div>
   );

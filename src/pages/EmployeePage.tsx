@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import PageTitle from "../components/PageTitle";
-import Timer from "../components/Timer";
+import PageTitle from "../common/PageTitle";
+import Timer from "../common/gadgets/Timer";
 
 const EmployeePage = () => {
   let { id } = useParams();

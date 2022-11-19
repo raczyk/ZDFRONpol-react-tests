@@ -1,4 +1,4 @@
-import OrangeLink from "./components/OrangeLink";
+import OrangeLink from "../common/OrangeLink";
 
 const NavBar = () => {
   const style = {
@@ -32,6 +32,9 @@ const NavBar = () => {
         </li>
         <li>
           <OrangeLink to="/itunes-albums">itunes albums</OrangeLink>
+        </li>
+        <li>
+          <OrangeLink to="/our-albums">our albums</OrangeLink>
         </li>
       </ul>
     </nav>

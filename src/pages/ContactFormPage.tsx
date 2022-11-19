@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "../common/PageTitle";
 
 const ContactFormPage = () => {
   const [firstName, setFirstName] = useState("");

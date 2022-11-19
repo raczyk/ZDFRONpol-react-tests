@@ -1,8 +1,8 @@
 import React from "react";
-import Clock from "../components/Clock";
-import NavBar from "../NavBar";
+import Clock from "../common/gadgets/Clock";
+import NavBar from "./NavBar";
 import { Outlet } from "react-router-dom";
-import ClickCounter from "../components/ClickCounter";
+import ClickCounter from "../common/gadgets/ClickCounter";
 
 const Page = () => {
   const sectionStyle = {

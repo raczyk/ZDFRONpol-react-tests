@@ -1,5 +1,5 @@
 import React from "react";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "../common/PageTitle";
 
 const LayoutDemo = () => {
   const boxStyle = {

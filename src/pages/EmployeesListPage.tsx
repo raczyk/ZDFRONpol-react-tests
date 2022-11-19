@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import EmployeesListItem from "../components/EmployeeListItem";
-import fakeFetch from "../fakeFetch";
-import { EmployeeRawData } from "../employeesDataMock";
-import CircleLoader from "../components/CircleLoader";
-import PageTitle from "../components/PageTitle";
+import EmployeesListItem from "../common/EmployeeListItem";
+import fakeFetch from "../dataMocking/fakeFetch";
+import {
+  EmployeeRawData,
+  default as employeesMockData,
+} from "../dataMocking/employeesDataMock";
+import CircleLoader from "../common/CircleLoader";
+import PageTitle from "../common/PageTitle";
 
 const EmployeesListPage = () => {
   const [employeesData, setEmployeesData] = useState<EmployeeRawData[]>([]);
@@ -11,7 +14,7 @@ const EmployeesListPage = () => {
 
   useEffect(() => {
     const fetchEmployeeData = async () => {
-      const promisedValueFromFetch = await fakeFetch();
+      const promisedValueFromFetch = await fakeFetch(employeesMockData);
       setEmployeesData(promisedValueFromFetch);
     };
     fetchEmployeeData();

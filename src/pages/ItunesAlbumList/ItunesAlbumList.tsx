@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import CircleLoader from "../components/CircleLoader";
-import ItunesAlbum, { AlbumDataEntry } from "../components/ItunesAlbum";
-import PageTitle from "../components/PageTitle";
+import Album from "../../common/album/Album";
+import CircleLoader from "../../common/CircleLoader";
+import { ItunesAlbumDataEntry } from "../../common/ItunesAlbum";
+import PageTitle from "../../common/PageTitle";
+import { getAlbumsFromItunesAlbumData } from "./itunesDataTransformer";
 
 const addDelay = () => {
   return new Promise((resolve) =>
@@ -13,25 +15,25 @@ const addDelay = () => {
 
 interface ItunesTopAlbumsResponseData {
   feed: {
-    entry: AlbumDataEntry[];
+    entry: ItunesAlbumDataEntry[];
   };
 }
 
 const ItunesAlbumList = () => {
   const [albumDataEntries, setAlbumDataEntries] = useState<
-    AlbumDataEntry[] | null
+    ItunesAlbumDataEntry[] | null
   >(null);
 
   useEffect(() => {
     const fetchAndSetAlbums = async () => {
-      const fetchResult = await fetch(
+      const fetchResponse = await fetch(
         "https://itunes.apple.com/us/rss/topalbums/limit=100/json"
       );
 
       await addDelay();
 
       const fetchedData =
-        (await fetchResult.json()) as ItunesTopAlbumsResponseData;
+        (await fetchResponse.json()) as ItunesTopAlbumsResponseData;
 
       console.log({ fetchedData });
       setAlbumDataEntries(fetchedData.feed.entry);
@@ -40,9 +42,17 @@ const ItunesAlbumList = () => {
     fetchAndSetAlbums();
   }, []);
 
-  const albumComponents = albumDataEntries?.map((albumEntry, index) => {
+  const albumData = albumDataEntries
+    ? getAlbumsFromItunesAlbumData(albumDataEntries)
+    : [];
+
+  const albumComponents = albumData?.map((album) => {
     return (
-      <ItunesAlbum key={index} place={index + 1} albumDataEntry={albumEntry} />
+      <Album
+        number={album.number}
+        coverImageUrl={album.coverImageUrl}
+        description={album.description}
+      />
     );
   });
 

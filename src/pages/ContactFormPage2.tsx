@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import InputWarningMessage from "../components/form/InputWarningMessage";
-import PageTitle from "../components/PageTitle";
+import InputWarningMessage from "../common/form/InputWarningMessage";
+import PageTitle from "../common/PageTitle";
 
 const ContactFormPage2 = () => {
   const initialFormState = {
