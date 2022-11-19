@@ -1,4 +1,4 @@
-import { AlbumProps } from "../../common/album/Album";
+import { AlbumProps } from "../../common/musicAlbum/Album";
 
 interface ObjectWithlabel {
   label: string;

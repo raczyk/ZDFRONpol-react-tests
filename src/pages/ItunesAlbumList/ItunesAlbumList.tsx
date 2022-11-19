@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Album from "../../common/album/Album";
+import Album from "../../common/musicAlbum/Album";
 import CircleLoader from "../../common/CircleLoader";
 import { ItunesAlbumDataEntry } from "../../common/ItunesAlbum";
 import PageTitle from "../../common/PageTitle";

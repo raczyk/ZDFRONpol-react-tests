@@ -2,7 +2,7 @@
 // Czy to będzie łatwiejsze do zrobienia niz Itunes Albums ? Czy moze trudniejsze
 
 import { useEffect, useState } from "react";
-import Album from "../common/album/Album";
+import Album from "../common/musicAlbum/Album";
 import fakeFetch from "../dataMocking/fakeFetch";
 import {
   AlbumRawData,
