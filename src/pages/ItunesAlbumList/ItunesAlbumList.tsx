@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Album from "../../common/musicAlbum/Album";
 import CircleLoader from "../../common/CircleLoader";
-import { ItunesAlbumDataEntry } from "../../common/ItunesAlbum";
 import PageTitle from "../../common/PageTitle";
-import { getAlbumsFromItunesAlbumData } from "./itunesDataTransformer";
+import {
+  getAlbumsFromItunesAlbumData,
+  ItunesAlbumDataEntry,
+} from "./itunesDataTransformer";
 
 const addDelay = () => {
   return new Promise((resolve) =>
@@ -49,6 +51,7 @@ const ItunesAlbumList = () => {
   const albumComponents = albumData?.map((album) => {
     return (
       <Album
+        key={album.number}
         number={album.number}
         coverImageUrl={album.coverImageUrl}
         description={album.description}
