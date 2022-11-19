@@ -9,7 +9,8 @@ const albumStyle = {
 };
 
 const numberStyle = {
-  margin: "5px",
+  padding: "5px",
+  background: "black",
 };
 
 export interface AlbumProps {
