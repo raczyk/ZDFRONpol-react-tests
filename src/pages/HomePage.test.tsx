@@ -4,6 +4,6 @@ import HomePageApp from './HomePage';
 
 test('renders learn react link', () => {
   render(<HomePageApp />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/not much here yet!/i);
   expect(linkElement).toBeInTheDocument();
 });
