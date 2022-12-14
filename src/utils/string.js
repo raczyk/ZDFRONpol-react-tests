@@ -53,7 +53,6 @@ export function string() {
     }
 
     // TODO: 1. Add reverse character
-    // TODO: 2. Add Remainder
 
     return {
         arguments,
