@@ -24,8 +24,16 @@
         "eject": "react-scripts eject",
         "coverage": "npm run test -- --coverage .",
         "prettier": "prettier src -check",
-        "husky-install": "husky install",
-        "lint-staged": "lint-staged --config lint-staged.js"
+        "husky-install": "husky install"
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,ts,tsx}": [
+            "eslint --max-warnings=0",
+            "react-scripts test --bail --watchAll=false --findRelatedTests --passWithNoTests"
+        ],
+        "src/**/*.{js,jsx,ts,tsx,json,css,js}": [
+            "prettier --write"
+        ]
     },
     "eslintConfig": {
         "extends": [
