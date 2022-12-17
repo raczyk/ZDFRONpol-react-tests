@@ -17,8 +17,16 @@ export function calculator() {
         return Math.pow(a, b)
     }
 
-    const element = (a) => {
+    const element = a => {
         return Math.sqrt(a)
+    }
+
+    const round = a => {
+        return Math.round(a)
+    }
+
+    const remainder = (a, b) => {
+        return a % b
     }
 
     // TODO: 1. Add Round to decimal
@@ -29,7 +37,8 @@ export function calculator() {
         product,
         quotient,
         power,
-        element
+        element,
+        round,
+        remainder,
     }
 }
-
