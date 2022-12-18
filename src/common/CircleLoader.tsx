@@ -10,7 +10,11 @@ const loaderContainerStyle = {
 const CircleLoader = ({ show }: CircleLoaderProps) => {
     if (!show) return null
     return (
-        <div data-testid="loader" style={loaderContainerStyle}>
+        <div
+            aria-label="loading..."
+            data-testid="loader"
+            style={loaderContainerStyle}
+        >
             <div className="loader"></div>
         </div>
     )

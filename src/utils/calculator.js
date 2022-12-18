@@ -29,6 +29,10 @@ export function calculator() {
         return a % b
     }
 
+    const exponent = (a, b) => {
+        return a ** b
+    }
+
     // TODO: 1. Add Round to decimal
     // TODO: 2. Add Remainder (modulo)
     return {
@@ -40,5 +44,6 @@ export function calculator() {
         element,
         round,
         remainder,
+        exponent,
     }
 }

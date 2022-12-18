@@ -18,9 +18,16 @@ test('is round function retunr proper  value', () => {
     expect(resultRound).toBe(3)
 })
 
-test('is remainder function return proper  value', () => {
+test('is remainder function return proper value', () => {
     const { remainder } = calculator()
-    expect(remainder(13, 5)).toBe(3)
+    const resultRemainder = remainder(13, 5)
+    expect(resultRemainder).toBe(3)
+})
+
+test('is exponent function return proper value', () => {
+    const { exponent } = calculator()
+    const resultExponent = exponent(5, 2)
+    expect(resultExponent).toBe(25)
 })
 
 // TODO Add tests for all calculator utils
