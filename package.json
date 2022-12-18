@@ -25,6 +25,7 @@
         "eject": "react-scripts eject",
         "coverage": "npm run test -- --coverage .",
         "prettier": "prettier src -check",
+        "cypress:open": "cypress open",
         "husky-install": "husky install"
     },
     "lint-staged": {
