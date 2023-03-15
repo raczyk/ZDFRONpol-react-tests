@@ -1,28 +1,23 @@
-import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
-import ContactFormPage from './ContactFormPage'
-import { BrowserRouter } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
+import ContactFormPage from './ContactFormPage'
 
-test('renders learn react link', async () => {
+test('is contact form working properly', async () => {
     window.alert = jest.fn()
+    render(<ContactFormPage></ContactFormPage>)
 
-    render(
-        <BrowserRouter>
-            <ContactFormPage />
-        </BrowserRouter>,
-    )
-    expect(screen.getByText(/form with two states/i)).toBeInTheDocument()
-    const nameInput = screen.getByText(/first name/i)
-    userEvent.type(nameInput, 'Jan')
+    const firstNameInput = screen.getByText(/first name/i)
 
-    const surnameInput = screen.getByText(/first name/i)
-    userEvent.type(surnameInput, 'Kowalski')
+    userEvent.type(firstNameInput, 'Jan')
 
-    const btnButton = screen.getByRole('button', {
+    const surnameNameInput = screen.getByText(/surname/i)
+
+    userEvent.type(surnameNameInput, 'Kowalski')
+
+    const submitBtn = screen.getByRole('button', {
         name: /submit/i,
     })
-    userEvent.click(btnButton)
+    userEvent.click(submitBtn)
 
     await waitFor(() => {
         expect(window.alert).toHaveBeenCalledTimes(1)

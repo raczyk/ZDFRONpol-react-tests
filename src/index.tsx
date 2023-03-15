@@ -12,6 +12,7 @@ import LayoutDemo from './pages/LayoutDemo'
 import ContactFormPage2 from './pages/ContactFormPage2'
 import ItunesAlbumList from './pages/ItunesAlbumList/ItunesAlbumList'
 import OurAlbums from './pages/OurAlbums'
+import ToDo from './pages/ToDo'
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: '/our-albums',
                 element: <OurAlbums />,
+            },
+            {
+                path: '/todo',
+                element: <ToDo />,
             },
         ],
     },

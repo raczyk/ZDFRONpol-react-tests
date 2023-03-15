@@ -1,21 +1,20 @@
-import React from 'react'
 import {
     render,
     screen,
     waitForElementToBeRemoved,
 } from '@testing-library/react'
-import EmployeesListPage from './EmployeesListPage'
+import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import EmployeesListPage from './EmployeesListPage'
 
-test('employee data has been fetch properly', async () => {
+test('eployee data has been fetch properly', async () => {
     render(
         <BrowserRouter>
-            <EmployeesListPage />
+            <EmployeesListPage></EmployeesListPage>,
         </BrowserRouter>,
     )
-    const loader2 = screen.getByTestId('loader')
+    expect(screen.getByText(/emloyee list/i)).toBeInTheDocument()
     const loader = screen.getByLabelText('loading...')
-    expect(loader2).toBeInTheDocument()
     expect(loader).toBeInTheDocument()
     await waitForElementToBeRemoved(loader)
     expect(screen.getByText(/john doe/i)).toBeInTheDocument()

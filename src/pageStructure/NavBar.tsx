@@ -24,7 +24,9 @@ const NavBar = () => {
                     </OrangeLink>
                 </li>
                 <li>
-                    <OrangeLink to="layout-demo">layout demo</OrangeLink>
+                    <OrangeLink className="layout" to="layout-demo">
+                        layout demo
+                    </OrangeLink>
                 </li>
                 <li>
                     <OrangeLink className="contactLink" to="/contact">
@@ -41,6 +43,9 @@ const NavBar = () => {
                 </li>
                 <li>
                     <OrangeLink to="/our-albums">our albums</OrangeLink>
+                </li>
+                <li>
+                    <OrangeLink to="/todo">todo</OrangeLink>
                 </li>
             </ul>
         </nav>
