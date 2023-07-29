@@ -14,7 +14,7 @@ import ItunesAlbumList from './pages/ItunesAlbumList/ItunesAlbumList'
 import OurAlbums from './pages/OurAlbums'
 import ToDo from './pages/ToDo'
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
     {
         path: '/',
         element: <Page />,

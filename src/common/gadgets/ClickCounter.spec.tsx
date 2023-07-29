@@ -1,16 +1,13 @@
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import ClickCounter from './ClickCounter'
+import userEvent from '@testing-library/user-event'
 
-test('click to the button and check is value has changed', () => {
-    render(<ClickCounter></ClickCounter>)
-
+test('is clickCounter change text after click', () => {
+    render(<ClickCounter />)
     const btn = screen.getByText(/click me/i)
-
     expect(btn).toBeInTheDocument()
 
     userEvent.click(btn)
-
     expect(screen.getByText(/click me 1/i)).toBeInTheDocument()
 
     userEvent.dblClick(btn)

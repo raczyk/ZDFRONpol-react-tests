@@ -6,7 +6,7 @@ import OrangeLink from './OrangeLink'
 test('is orange link render properly and redirect to our-albums', () => {
     render(
         <BrowserRouter>
-            <OrangeLink to="/our-albums"></OrangeLink>
+            <OrangeLink to="/our-albums">Orangelink</OrangeLink>,
         </BrowserRouter>,
     )
 
@@ -14,6 +14,5 @@ test('is orange link render properly and redirect to our-albums', () => {
 
     userEvent.click(link)
     console.log(window.location.pathname)
-
     expect(window.location.pathname).toBe('/our-albums')
 })

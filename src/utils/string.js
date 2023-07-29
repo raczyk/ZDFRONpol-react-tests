@@ -56,12 +56,7 @@ export function string() {
         }
     }
 
-    // TODO: 1. Add reverse character
-
-    const reverse = str => {
-        console.log(str.split('').reverse().join(''))
-        return str.split('').reverse().join('')
-    }
+    const textReverse = str => str.split('').reverse().join('')
 
     return {
         arguments,
@@ -72,7 +67,7 @@ export function string() {
         snakeCase,
         studly,
         ucFirst,
-        reverse,
+        textReverse,
     }
 }
 
