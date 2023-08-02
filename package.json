@@ -58,7 +58,6 @@
     },
     "devDependencies": {
         "@testing-library/cypress": "^9.0.0",
-        "cypress": "^12.1.0",
         "eslint-config-prettier": "^8.5.0",
         "husky": "^8.0.2",
         "jest-fetch-mock": "^3.0.3",
